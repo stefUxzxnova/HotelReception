@@ -1,0 +1,90 @@
+﻿@model WebSite.Models.Client.ClientVM
+@using WebSite.OtherContent.Enums
+
+@{
+	this.Layout = "_Layout";
+	ViewData["title"] = "Edit";
+}
+
+<fieldset>
+	<legend>EDIT CLEINT</legend>
+	<form action="/Client/Edit" method="post">
+		<div class="grid">
+			@Html.HiddenFor(m => m.ClientID)
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.FirstName)
+				</div>
+				<div class="col-2">
+
+					@Html.TextBoxFor(m => m.FirstName)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.FirstName)
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.LastName)
+				</div>
+				<div class="col-2">
+
+					@Html.TextAreaFor(m => m.LastName)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.LastName)
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.Email)
+				</div>
+				<div class="col-2">
+
+					@Html.TextBoxFor(m => m.Email)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.Email)
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.Phone)
+				</div>
+				<div class="col-2">
+
+					@Html.TextBoxFor(m => m.Phone)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.Phone)
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.City)
+				</div>
+				<div class="col-2">
+
+					@Html.TextBoxFor(m => m.City)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.City)
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a class="right" href="/Client/Index">Back</a>
+					<input type="submit" class="right" value="Save" />
+				</div>
+			</div>
+		</div>
+	</form>
+</fieldset>
+
+

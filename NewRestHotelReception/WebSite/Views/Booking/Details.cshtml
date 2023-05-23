@@ -1,0 +1,51 @@
+﻿@model WebSite.Models.Booking.BookingVM
+
+@{
+	this.Layout = "_Layout";
+	ViewData["title"] = "Booking details";
+}
+
+<h1>
+    Информация относно резервация №@Model.Id
+</h1>
+<div class="booking-info">
+    <h2 style="text-align: center; color: #333;">
+        Booking Details
+    </h2>
+    <div class="booking-property">
+        <span class="property-label">Check-in Date:</span>
+        <span class="property-value">@Model.CheckInDate</span>
+    </div>
+    <div class="booking-property">
+        <span class="property-label">Check-out Date:</span>
+        <span class="property-value">@Model.CheckOutDate</span>
+    </div>
+    <div class="booking-property">
+        <span class="property-label">Price:</span>
+        <span class="property-value">@Model.TotalCost лв.</span>
+    </div>
+    <h3 style="text-align: center; color: #333;">Client Information</h3>
+    <div class="client-info">
+        <div class="client-property">
+            <span class="property-label">Name:</span>
+            <span class="property-value">@Model.ClientVM.FirstName @Model.ClientVM.LastName</span>
+        </div>
+        <div class="client-property">
+            <span class="property-label">Email:</span>
+            <span class="property-value">@Model.ClientVM.Email</span>
+        </div>
+        <a href="@Url.Action("Details", "Client", new { id = Model.ClientVM.ClientID })">View Client Details</a>
+    </div>
+    <h3 style="text-align: center; color: #333;">Room Information</h3>
+    <div class="room-info">
+        <div class="room-property">
+            <span class="property-label">Number:</span>
+            <span class="property-value">@Model.RoomVM.RoomNumber</span>
+        </div>
+        <div class="room-property">
+            <span class="property-label">Type:</span>
+            <span class="property-value">@Model.RoomVM.RoomType</span>
+        </div>
+        <a href="@Url.Action("Details", "Room", new { id = Model.RoomVM.ID })">View Room Details</a>
+    </div>
+</div>

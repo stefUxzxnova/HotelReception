@@ -1,0 +1,73 @@
+﻿@model WebSite.Models.Booking.BookingVM
+@using WebSite.OtherContent.Enums
+
+@{
+	this.Layout = "_Layout";
+	ViewData["title"] = "Edit booking";
+}
+
+<fieldset>
+	
+	<legend>EDIT BOOKING</legend>
+	<form action="/Booking/Edit" method="post">
+		<div id="priceSection">
+
+			@Html.HiddenFor(m => m.Id)
+			@Html.HiddenFor(m => m.ClientID)
+			@Html.HiddenFor(m => m.RoomID)
+
+			<div class="row">
+				@Html.LabelFor(m => m.CheckInDate)
+
+				<div class="col-2">
+
+					<div class="col-1">
+						<input type="date" id="CheckInDate" name="CheckInDate" value="@(Model.CheckInDate?.ToString("yyyy-MM-dd"))">
+					</div>
+					@Html.ValidationMessageFor(m => m.CheckInDate, "", new { @class = "text-danger" })
+				</div>
+			</div>
+			<div class="row">
+				@Html.LabelFor(m => m.CheckOutDate)
+
+				<div class="col-2">
+
+					<div class="col-1">
+						<input type="date" id="CheckOutDate" name="CheckOutDate" value="@(Model.CheckOutDate?.ToString("yyyy-MM-dd"))">
+					</div>
+					@Html.ValidationMessageFor(m => m.CheckOutDate, "", new { @class = "text-danger" })
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.PaymentStatus)
+				</div>
+				<div class="col-2">
+					<select name="PaymentStatus">
+						<option disabled selected>Select option</option>
+						@foreach (Enum type in Enum.GetValues(typeof(WebSite.OtherContent.Enums.PaymentStatus.PaymentStatusBooking)))
+						{
+							<option value="@type" selected="@(Model.PaymentStatus != null && type.ToString().Equals(Model.PaymentStatus))">
+								@Enum.GetName(typeof(WebSite.OtherContent.Enums.PaymentStatus.PaymentStatusBooking), type)
+							</option>
+						}
+					</select>
+					@Html.ValidationMessageFor(m => m.PaymentStatus, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-2">
+				<a href="/Client/Index">Back</a>
+				<input type="submit" value="Save" />
+			</div>
+		</div>
+		</div>
+	</form>
+</fieldset>
+
+

@@ -1,0 +1,126 @@
+﻿@model WebSite.Models.Room.CreateVM
+@using WebSite.OtherContent.Enums
+
+@{
+	this.Layout = "_Layout";
+	ViewData["title"] = "Create";
+}
+
+<fieldset>
+	<legend>CREATE ROOM</legend>
+	<form action="/Room/Create" method="post" enctype="multipart/form-data">
+		<div class="grid">
+
+			<div class="row">
+				File: <input type="file" name="image" accept=".jpg, .jpeg, .png, .jfif" , style="width:200px; " />
+
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.RoomNumber)
+				</div>
+				<div class="col-2">
+
+					@Html.TextBoxFor(m => m.RoomNumber)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.RoomNumber)
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.RoomDescription)
+				</div>
+				<div class="col-2">
+
+					@Html.TextAreaFor(m => m.RoomDescription)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.RoomDescription)
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.RoomType)
+				</div>
+				<div class="col-2">
+					<select name="RoomType">
+						@foreach (Enum type in Enum.GetValues(typeof(WebSite.OtherContent.Enums.RoomType.RoomTypeEnum)))
+						{
+							<option value="@type">
+								@Enum.GetName(typeof(WebSite.OtherContent.Enums.RoomType.RoomTypeEnum), type)
+							</option>
+						}
+					</select>
+				</div>
+				<div class="col-2">
+
+					@Html.ValidationMessageFor(m => m.RoomType)
+				</div>
+			</div>
+			<br />
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.Floor)
+				</div>
+				<div class="col-2">
+
+					<input name="Floor" type="number" id="floor" placeholder="floor" min="0" max="20">
+
+					<script>
+						document.querySelector("input[type=number]")
+							.oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+
+						function save() {
+							var Fllor = document.getElementById('floor').value;
+						}
+					</script>
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.Floor)
+				</div>
+			</div>
+			<br />
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.MaxOccupancy)
+				</div>
+				<div class="col-2">
+
+					@Html.TextBoxFor(m => m.MaxOccupancy)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.MaxOccupancy)
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.PricePerDay)
+				</div>
+				<div class="col-2">
+
+					@Html.TextBoxFor(m => m.PricePerDay)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.PricePerDay)
+				</div>
+			</div>
+
+
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a class="right" href="/Room/Index">Back</a>
+					<input type="submit" value="Save" />
+				</div>
+			</div>
+		</div>
+	</form>
+</fieldset>
+

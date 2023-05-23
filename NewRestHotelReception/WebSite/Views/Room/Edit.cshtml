@@ -1,0 +1,95 @@
+﻿@model WebSite.Models.Room.EditVM
+@using WebSite.OtherContent.Enums
+
+@{
+	this.Layout = "_Layout";
+	ViewData["title"] = "Edit";
+}
+
+<fieldset>
+	<legend>EDIT ROOM</legend>
+	<form action="/Room/Edit" method="post" enctype="multipart/form-data">
+
+		@Html.HiddenFor(m => m.Id)
+		
+		<div class="grid">
+
+			<div class="form-group">
+				File: <input name="ImageLink" type="file" , style="width:200px;" />
+			</div>
+
+
+			@*<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.RoomNumber)
+				</div>
+				<div class="col-2">
+
+					@Html.TextAreaFor(m => m.RoomNumber)
+				</div>
+				<div class="col-2">
+					@Html.ValidationMessageFor(m => m.RoomNumber)
+				</div>
+			</div>*@
+			<div class="form-group">
+				<label for="@Model.RoomNumber">Room Number</label>
+				<input type="text" class="form-control" name="RoomNumber" value="@Model.RoomNumber">
+			</div>
+			<div class="form-group">
+				<label for="@Model.RoomDescription">Room Description</label>
+				<input type="text" class="form-control" name="RoomDescription" value="@Model.RoomDescription" >
+			</div>
+
+			<div class="form-group">
+				<label for="@Model.Floor">Floor</label>
+				<input type="number" min="0" max="20" class="form-control" name="Floor" value="@Model.Floor">
+				<small id="Help" class="form-text text-muted">Number between 0 and 20.</small>
+			</div>
+
+            <div class="form-group">
+                <label for="@Model.MaxOccupancy">Max Occupancy</label>
+				<input type="number" min="0" max="10" class="form-control" name="MaxOccupancy" value="@Model.MaxOccupancy">
+				<small id="Help" class="form-text text-muted">Number between 0 and 10.</small>
+			</div>
+
+			<div class="form-group">
+				<label for="@Model.PricePerDay">Price per day</label>
+				<input type="number" class="form-control" name="PricePerDay" aria-describedby="emailHelp" value="@Model.PricePerDay">
+			</div>
+
+
+		
+			<div class="row">
+				
+				<div class="col-2">
+					<div class="col-1">
+					@Html.LabelFor(m => m.RoomType)
+				</div>
+				<div class="col-2">
+					<select name="RoomType">
+						@foreach (Enum type in Enum.GetValues(typeof(WebSite.OtherContent.Enums.RoomType.RoomTypeEnum)))
+						{
+							<option value="@type.ToString()" selected="@(Model.RoomType != null && type.ToString() == Model.RoomType.ToString())">
+								@Enum.GetName(typeof(WebSite.OtherContent.Enums.RoomType.RoomTypeEnum), type)
+							</option>
+						}
+					</select>
+				</div>
+					
+				</div>
+				
+			</div>
+
+
+			
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a  href="/Room/Index">Back</a> 
+					<input type="submit" class="btn btn-primary" value="Save" />
+				</div>
+			</div>
+		</div>
+	</form>
+</fieldset>

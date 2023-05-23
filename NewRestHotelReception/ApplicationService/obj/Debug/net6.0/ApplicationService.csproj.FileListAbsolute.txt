@@ -1,0 +1,17 @@
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\bin\Debug\net6.0\ApplicationService.deps.json
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\bin\Debug\net6.0\ApplicationService.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\bin\Debug\net6.0\ApplicationService.pdb
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\bin\Debug\net6.0\DataHR.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\bin\Debug\net6.0\Repository.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\bin\Debug\net6.0\DataHR.pdb
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\bin\Debug\net6.0\Repository.pdb
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ApplicationService.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ApplicationService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ApplicationService.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ApplicationService.AssemblyInfo.cs
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ApplicationService.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ApplicationService.csproj.CopyComplete
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ApplicationService.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\refint\ApplicationService.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ApplicationService.pdb
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\ApplicationService\obj\Debug\net6.0\ref\ApplicationService.dll

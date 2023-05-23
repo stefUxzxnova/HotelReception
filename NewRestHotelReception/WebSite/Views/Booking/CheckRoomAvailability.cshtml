@@ -1,0 +1,89 @@
+﻿@model WebSite.Models.Booking.CheckAvailabilityVM
+
+@{
+	this.Layout = "_Layout";
+	ViewData["title"] = "Check room";
+}
+
+<form action="/Booking/CheckRoomAvailability" method="post">
+	@Html.HiddenFor(m => m.ClientID)
+	<div class="row">
+		<div class="col-1">
+			<!--Username:-->
+			@Html.LabelFor(m => m.RoomID)
+		</div>
+		<div class="col-2">
+			<select name="RoomID" onchange="showOtherContent_OnChange()">
+				<option disabled selected>Select room</option>
+				@foreach (var item in Model.roomVMs)
+				{
+					<option value="@item.ID" selected="@(Model.RoomID != null && Model.RoomID == item.ID)">
+						Стая №
+						@item.RoomNumber (Price: @item.PricePerDay лв.)
+					</option>
+				}
+			</select>
+		</div>
+	</div>
+	<br />
+
+	<div id="dateSection" style="display: none;">
+		<div>
+			<h4>Select Dates:</h4>
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.CheckInDate)
+				</div>
+				<div class="col-2">
+
+					<div class="col-1">
+						<input type="date" id="CheckInDate" name="CheckInDate" value="@(Model.CheckInDate?.ToString("yyyy-MM-dd"))">
+					</div>
+					@Html.ValidationMessageFor(m => m.CheckInDate, "", new { @class = "text-danger" })
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-1">
+					@Html.LabelFor(m => m.CheckOutDate)
+				</div>
+				<div class="col-2">
+
+					<div class="col-1">
+						<input type="date" id="CheckOutDate" name="CheckOutDate" value="@(Model.CheckOutDate?.ToString("yyyy-MM-dd"))" onchange="checkAvailability_function()">
+					</div>
+					@Html.ValidationMessageFor(m => m.CheckOutDate, "", new { @class = "text-danger" })
+				</div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+				<input type="submit" value="Check" />
+		</div>
+	</div>
+</form>
+<br />
+@ViewBag.Response
+@ViewBag.InvalidData
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+
+	function showOtherContent_OnChange() {
+		$("#dateSection").css("display", "flex");
+	}
+
+	function checkAndChangeDisplay() {
+		var response = '@ViewBag.Response'; // Get the value from ViewBag
+
+		if (response !== null) {
+			$("#dateSection").css("display", "flex");
+		}
+	}
+
+</script>

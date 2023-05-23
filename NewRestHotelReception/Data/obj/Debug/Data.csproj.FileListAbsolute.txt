@@ -1,0 +1,6 @@
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Data\bin\Debug\Data.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Data\bin\Debug\Data.pdb
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Data\obj\Debug\Data.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Data\obj\Debug\Data.pdb

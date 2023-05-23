@@ -1,0 +1,135 @@
+﻿@model WebSite.Models.Room.RoomViewVM
+@using static WebSite.OtherContent.Enums.Ordering.OrderBy
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Index";
+}
+﻿
+﻿
+<h2>Rooms</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<form action="/Room/Index" method="get">
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">Room Number</label>
+            @Html.TextBoxFor(m => m.Filter.RoomNumber)
+            @Html.ValidationMessageFor(m => m.Filter.RoomNumber)
+    </div>
+    <br>
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Room Type</label>
+     
+            <select name="Filter.RoomType">
+                <option value="" disabled selected>Select option</option>
+                @foreach (Enum type in Enum.GetValues(typeof(WebSite.OtherContent.Enums.RoomType.RoomTypeEnum)))
+                {
+                    <option value="@type" selected="@(Model.Filter.RoomType != null && Model.Filter.RoomType.Equals(type.ToString()))">
+                        @Enum.GetName(typeof(WebSite.OtherContent.Enums.RoomType.RoomTypeEnum), type)
+                    </option>
+                }
+            </select>
+      <br />
+    </div>
+    <div class="col-auto">   
+     <button type="submit" class="btn btn-primary mb-2">Filter</button>
+      <a  style="margin: 10px" href="/Room/Index">Clear</a>
+    </div>
+  </div>
+</form>
+
+<div class="container">
+    <div class="col-md-8 offset-md-8">
+            <form action="/Room/Index" method="get">
+
+                <div class="row">
+                    <div class="col-1">OrderBy:</div>  
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <select style="width: 200px" name="Orderby">
+                            <option value="" disabled selected>Select option</option>
+                            @foreach (Enum value in Enum.GetValues(typeof(WebSite.OtherContent.Enums.Ordering.OrderBy)))
+                            {
+                                <option value="@value.ToString()" selected="@(ViewBag.OrderBy != null && ViewBag.Orderby.Equals(value.ToString()))" >
+                                    @Enum.GetName(typeof(WebSite.OtherContent.Enums.Ordering.OrderBy), value)
+                                </option>
+                            }        
+                        </select>
+                    </div>
+
+                </div>
+                <br />
+               
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">OrderBy</button>
+                <a style="margin: 10px" href="/Room/Index">Clear</a>
+            </div>
+            </form>
+       </div>
+
+</div>
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            <p>Room number</p>
+        </th>
+        <th>
+            <p>Room type</p>
+        </th>
+        <th>
+            <p>Floor</p>
+        </th>
+        <th>
+            <p>Is occupied</p>
+        </th>
+        <th>
+            <p>Price</p>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.List)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Floor)
+            </td>
+            <td>
+                @if (item.isOccupied)
+                {
+                    <p>YES</p>
+                }
+                else
+                {
+                    <p>NO</p>
+                }
+                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PricePerDay)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { onclick = "return confirm('Delete item?');" })
+            </td>
+        </tr>
+    }
+
+</table>
+

@@ -1,0 +1,34 @@
+﻿@model WebSite.Models.Room.DetailSVM
+
+@{
+	this.Layout = "_Layout";
+	ViewData["title"] = "Details";
+}
+<fieldset>
+	@Html.HiddenFor(m => m.ID)
+	</br>
+	<div style="margin: auto; width: 90%; border: 3px solid grey; padding: 10px;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		<div class="row featurette">
+
+			<div class="col-md-9">
+				<h1 class="featurette-heading">@Model.RoomType.ToString()</h1>
+				<h3>@Model.PricePerDay lv.</h3>
+				<hr class="featurette-divider">
+			</div>
+			<div class="col-md-6">
+				<img src="~/images/@Model.ImageLink" style="width: 100%; height: 100%" alt="">
+			</div>
+
+			<div class="col-md-5">
+				<h2 class="featurette-heading">Floor: </h2>@Model.Floor
+				<h2 class="featurette-heading">Max Occupancy: </h2>@Model.MaxOccupancy
+				<h2 class="featurette-heading">Is Occupied: </h2>@Model.isOccupied
+				<hr class="featurette-divider">
+				<h4>Description: @Model.RoomDescription</h4>
+			</div>
+			</br>
+			<hr class="featurette-divider">
+			
+		</div>
+</fieldset>
+

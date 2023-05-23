@@ -1,0 +1,15 @@
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\bin\Debug\net6.0\Repository.deps.json
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\bin\Debug\net6.0\Repository.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\bin\Debug\net6.0\Repository.pdb
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\bin\Debug\net6.0\DataHR.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\bin\Debug\net6.0\DataHR.pdb
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\Repository.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\refint\Repository.dll
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\Repository.pdb
+C:\Users\User\OneDrive\Desktop\pregovor\distributedSystems\NewRestHotelReception\Repository\obj\Debug\net6.0\ref\Repository.dll
